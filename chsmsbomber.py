@@ -190,19 +190,19 @@ class ChSMSBomber:
             colorizeInput(INPUT_BACKMENU)
             return
 
-        # Normalize phone numbers into +98xxxxxxxxxx format
+        # Normalize phone numbers into +91xxxxxxxxxx format
         for i in range(len(self.targetPhoneNumber)):
             if self.targetPhoneNumber[i].startswith("0"):
-                self.targetPhoneNumber[i] = "+98" + self.targetPhoneNumber[i][1:]
-            elif self.targetPhoneNumber[i].startswith("98"):
+                self.targetPhoneNumber[i] = "+91" + self.targetPhoneNumber[i][1:]
+            elif self.targetPhoneNumber[i].startswith("91"):
                 self.targetPhoneNumber[i] = "+" + self.targetPhoneNumber[i]
-            elif self.targetPhoneNumber[i].startswith("+98"):
+            elif self.targetPhoneNumber[i].startswith("+91"):
                 pass
             else:
                 print(Logs.error(
                     f"Invalid phone number format {Fore.CYAN}("
                     f"{Fore.LIGHTYELLOW_EX}{self.targetPhoneNumber[i]}{Fore.CYAN})"
-                    f"{Fore.LIGHTRED_EX}. Must start with 0, 98, or +98"
+                    f"{Fore.LIGHTRED_EX}. Must start with 0, 91, or +91"
                 ))
                 colorizeInput(INPUT_BACKMENU)
                 return
